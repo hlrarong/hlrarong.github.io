@@ -90,7 +90,7 @@
     root: '/',
     scheme: 'Muse',
     version: '6.5.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -113,14 +113,14 @@
 
 
   <meta name="description" content="循环结构笔记，主要是课堂例题分析。">
-<meta name="keywords" content="课堂笔记">
+<meta name="keywords" content="C语言,课堂笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【课堂笔记】C语言循环结构">
-<meta property="og:url" content="http://hlrarong.github.io/2018/11/24/11-23C语言/index.html">
+<meta property="og:url" content="http://hlrarong.github.io/2018/11/24/11-23Cnotes/index.html">
 <meta property="og:site_name" content="泼墨呀泼墨">
 <meta property="og:description" content="循环结构笔记，主要是课堂例题分析。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T07:39:13.245Z">
+<meta property="og:updated_time" content="2018-11-25T10:54:40.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【课堂笔记】C语言循环结构">
 <meta name="twitter:description" content="循环结构笔记，主要是课堂例题分析。">
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://hlrarong.github.io/2018/11/24/11-23C语言/">
+  <link rel="canonical" href="http://hlrarong.github.io/2018/11/24/11-23Cnotes/">
 
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hlrarong.github.io/2018/11/24/11-23C语言/">
+    <link itemprop="mainEntityOfPage" href="http://hlrarong.github.io/2018/11/24/11-23Cnotes/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HLR">
@@ -352,11 +352,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-25 15:39:13" itemprop="dateModified" datetime="2018-11-25T15:39:13+08:00">2018-11-25</time>
+                <time title="修改时间：2018-11-25 18:54:40" itemprop="dateModified" datetime="2018-11-25T18:54:40+08:00">2018-11-25</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/C语言/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -394,13 +412,9 @@
       
 
       
-        <h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><blockquote>
-<p><strong>1+(1+2)+(1+2+3)+…+(1+2+3+…+n)</strong></p>
-</blockquote>
+        <h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><div class="note info"><p>1+(1+2)+(1+2+3)+…+(1+2+3+…+n)</p></div>
 <div class="tabs" id="one"><ul class="nav-tabs"><li class="tab active"><a href="#one-1">for双重循环</a></li><li class="tab"><a href="#one-2">while双重循环</a></li><li class="tab"><a href="#one-3">函数</a></li><li class="tab"><a href="#one-4">for单循环</a></li></ul><div class="tab-content"><div class="tab-pane active" id="one-1"><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"><span class="built_in">int</span> main(void)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> <span class="built_in">n</span>,i,<span class="built_in">t</span>,<span class="built_in">sum</span>,j;</span><br><span class="line">    <span class="built_in">sum</span>=<span class="number">0</span>;</span><br><span class="line">    printf (<span class="string">“Please input n!\n”</span>);</span><br><span class="line">    scanf (<span class="string">“%d”</span>,&amp;<span class="built_in">n</span>);</span><br><span class="line">    for (i=<span class="number">1</span>;i&lt;=<span class="built_in">n</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">t</span>=<span class="number">0</span>;</span><br><span class="line">        for (j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">            <span class="built_in">t</span>=<span class="built_in">t</span>+j;&#125;</span><br><span class="line">        <span class="built_in">sum</span>=<span class="built_in">sum</span>+<span class="built_in">t</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    printf (<span class="string">“%d\n”</span>,<span class="built_in">sum</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="one-2"><p><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line">    int s,n,t,i,<span class="keyword">j;</span></span><br><span class="line"><span class="keyword">    </span>printf (<span class="string">“please input n:\n”</span>)<span class="comment">;</span></span><br><span class="line">    <span class="keyword">scanf </span>(<span class="string">“%d”</span>,&amp;n)<span class="comment">;</span></span><br><span class="line">    s=<span class="number">0</span><span class="comment">;</span></span><br><span class="line">    i=<span class="number">1</span><span class="comment">;</span></span><br><span class="line">    while (i&lt;=n)&#123;</span><br><span class="line">        t=<span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">j=1;</span></span><br><span class="line"><span class="keyword">    </span>    while (<span class="keyword">j&lt;=i)&#123;</span></span><br><span class="line"><span class="keyword">    </span>        t=t+<span class="keyword">j;</span></span><br><span class="line"><span class="keyword">    </span>        <span class="keyword">j++;</span></span><br><span class="line"><span class="keyword">    </span>    &#125;</span><br><span class="line">        printf (<span class="string">“%d+”</span>,t)<span class="comment">;</span></span><br><span class="line">        s=s+t<span class="comment">;</span></span><br><span class="line">        i++<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    printf (<span class="string">“\b=%d\n”</span>,s)<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><span class="label primary">注意反斜杠\b是退格</span></p></div><div class="tab-pane" id="one-3"><p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fsum</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,t=<span class="number">0</span>;</span><br><span class="line">    i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;=n)&#123;</span><br><span class="line">        t=t+i;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s,t,i,n;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">“please input n\n”</span>);</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">“%d”</span>,&amp;n);</span><br><span class="line">    s=<span class="number">0</span>;</span><br><span class="line">    i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;=n)&#123;</span><br><span class="line">        t=fsum(i);</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">“%d+”</span>,t);</span><br><span class="line">        s=s+t;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">“\b=%d\n”</span>,s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><span class="label primary">没有声明函数的话必须把调用函数放在主函数前面</span></p></div><div class="tab-pane" id="one-4"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,n,s=<span class="number">0</span>,t=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">“请输入n\n”</span>);</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">“%d”</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        t=t+i;</span><br><span class="line">        s=s+t;&#125;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">“答案是%d\n”</span>,s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
-<h2 id="变式"><a href="#变式" class="headerlink" title="变式"></a>变式</h2><blockquote>
-<p>阶乘 1！+2！+…+n！</p>
-</blockquote>
+<h2 id="变式"><a href="#变式" class="headerlink" title="变式"></a>变式</h2><div class="note info"><p>阶乘 1！+2！+…+n！</p></div>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">jiechen</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,t;</span><br><span class="line">	t=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		t=t*i;&#125;</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,s,i,t;</span><br><span class="line">	i=<span class="number">1</span>;</span><br><span class="line">	s=<span class="number">0</span>;</span><br><span class="line">	t=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"input n\n"</span>);</span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">while</span> (i&lt;=n)&#123;</span><br><span class="line">		t=jiechen(i);</span><br><span class="line">		s=s+t;</span><br><span class="line">		i++;&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"%d\n"</span>,s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="课本P96圆柱体积例题"><a href="#课本P96圆柱体积例题" class="headerlink" title="课本P96圆柱体积例题"></a>课本P96圆柱体积例题</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cylinder</span> <span class="params">(<span class="keyword">double</span> r, <span class="keyword">double</span> h)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> height, radius, volume;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"enter radius and height:"</span>);</span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">"%lf%lf"</span>,&amp;radius,&amp;height);</span><br><span class="line">	volume=cylinder (radius, height);</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"volume =%.3f\n"</span>,volume);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cylinder</span> <span class="params">(<span class="keyword">double</span> r, <span class="keyword">double</span> h)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> result;</span><br><span class="line">	result=<span class="number">3.1415926</span>*r*r*h;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>要想把调用的函数放在后面，必须在主函数前先声明函数，并加上分号。 </p>
@@ -432,6 +446,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag"># C语言</a>
           
             <a href="/tags/课堂笔记/" rel="tag"># 课堂笔记</a>
           
@@ -476,6 +492,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/11/25/CsummaryTBC/" rel="prev" title="C语言个人总结（持续更新">
+                C语言个人总结（持续更新 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -514,6 +534,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -544,12 +566,25 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
               
 
               
@@ -563,7 +598,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
