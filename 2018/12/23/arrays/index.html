@@ -112,25 +112,25 @@
 
 
 
-  <meta name="description" content="C语言小TIPS总结。11.24更新">
-<meta name="keywords" content="C语言">
+  <meta name="description" content="数组和二维数组">
+<meta name="keywords" content="课堂笔记,C语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言个人总结（持续更新">
-<meta property="og:url" content="http://hlrarong.github.io/2018/11/25/CsummaryTBC/index.html">
+<meta property="og:title" content="数组和二维数组">
+<meta property="og:url" content="http://hlrarong.github.io/2018/12/23/arrays/index.html">
 <meta property="og:site_name" content="泼墨呀泼墨">
-<meta property="og:description" content="C语言小TIPS总结。11.24更新">
+<meta property="og:description" content="数组和二维数组">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T10:54:35.394Z">
+<meta property="og:updated_time" content="2018-12-23T08:58:02.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言个人总结（持续更新">
-<meta name="twitter:description" content="C语言小TIPS总结。11.24更新">
+<meta name="twitter:title" content="数组和二维数组">
+<meta name="twitter:description" content="数组和二维数组">
 
 
 
 
 
 
-  <link rel="canonical" href="http://hlrarong.github.io/2018/11/25/CsummaryTBC/">
+  <link rel="canonical" href="http://hlrarong.github.io/2018/12/23/arrays/">
 
 
 
@@ -140,7 +140,7 @@
   };
 </script>
 
-  <title>C语言个人总结（持续更新 | 泼墨呀泼墨</title>
+  <title>数组和二维数组 | 泼墨呀泼墨</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hlrarong.github.io/2018/11/25/CsummaryTBC/">
+    <link itemprop="mainEntityOfPage" href="http://hlrarong.github.io/2018/12/23/arrays/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HLR">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C语言个人总结（持续更新
+          <h1 class="post-title" itemprop="name headline">数组和二维数组
               
             
           </h1>
@@ -335,7 +335,7 @@
                 
               
 
-              <time title="创建时间：2018-11-25 16:06:08 / 修改时间：18:54:35" itemprop="dateCreated datePublished" datetime="2018-11-25T16:06:08+08:00">2018-11-25</time>
+              <time title="创建时间：2018-12-23 16:21:49 / 修改时间：16:58:02" itemprop="dateCreated datePublished" datetime="2018-12-23T16:21:49+08:00">2018-12-23</time>
             
 
             
@@ -384,7 +384,7 @@
           
 
           
-              <div class="post-description">C语言小TIPS总结。11.24更新</div>
+              <div class="post-description">数组和二维数组</div>
           
 
         </div>
@@ -400,21 +400,18 @@
       
 
       
-        <ul>
-<li><h2 id="题目中while和for的小区别"><a href="#题目中while和for的小区别" class="headerlink" title="题目中while和for的小区别"></a>题目中while和for的小区别</h2><p>当题目中出现</p>
-<div class="note info"><p>输入一些数。以0或负数为结束标志</p></div>
-<p>的时候，意思就是使用while循环。</p>
+        <h2 id="数组和二维数组"><a href="#数组和二维数组" class="headerlink" title="数组和二维数组"></a>数组和二维数组</h2><ul>
+<li><h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><div class="note info"><p>输入一个数字n，再输入数组内的n个元素，输出平均值和所有元素之和。</p></div>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> average,sum;</span><br><span class="line">	<span class="keyword">int</span> i,n;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">	sum=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"Please input a number!\n"</span>);</span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"Please input %d numbers!\n"</span>,n);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">		sum=sum+a[i];&#125;</span><br><span class="line">	average=sum/n;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"average=%.2f\n"</span>,average);</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"&gt;average="</span>);</span><br><span class="line">	<span class="keyword">for</span> (i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i]&gt;average)&#123;</span><br><span class="line">			<span class="built_in">printf</span> (<span class="string">"%d "</span>,a[i]);&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h2 id="数值的交换"><a href="#数值的交换" class="headerlink" title="数值的交换"></a>数值的交换</h2><p>例子如下：</p>
-<div class="note info"><p>输入一个正整数n，再输入n个整数，输出最小值</p></div>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">​    <span class="keyword">int</span> n,i,num1,num2,min;</span><br><span class="line">​    num1=<span class="number">0</span>;</span><br><span class="line">​    num2=<span class="number">0</span>;</span><br><span class="line">​    min=<span class="number">0</span>;</span><br><span class="line">​    i=<span class="number">2</span>;</span><br><span class="line">​    <span class="built_in">printf</span> (<span class="string">"Please enter n!\n"</span>);</span><br><span class="line">​    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">​    <span class="built_in">printf</span> (<span class="string">"Please enter number #1\n"</span>);</span><br><span class="line">​    <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;num1);</span><br><span class="line">​    <span class="keyword">while</span> (i&lt;=n)&#123;</span><br><span class="line">​        <span class="built_in">printf</span> (<span class="string">"Please enter number#%d\n"</span>,i);</span><br><span class="line">​        <span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;num2);</span><br><span class="line">​        <span class="keyword">if</span> (num1&gt;=num2)&#123;</span><br><span class="line">​            min=num2;</span><br><span class="line">​            num1=num2;</span><br><span class="line">​        &#125;</span><br><span class="line">​        <span class="keyword">else</span>&#123;</span><br><span class="line">​            min=num1;</span><br><span class="line">​        &#125;</span><br><span class="line">​        i++; </span><br><span class="line">​    &#125;</span><br><span class="line">​    <span class="built_in">printf</span> (<span class="string">"minimum is %d\n"</span>,min);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><h3 id="找数组的最值"><a href="#找数组的最值" class="headerlink" title="找数组的最值"></a>找数组的最值</h3><div class="note info"><p>输入一个数字n，再输入数组内的n个元素，输出最小值和最大值。</p></div>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,n,j,k;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">int</span> min,max;</span><br><span class="line">	j=k=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"Please input a number!\n"</span>);</span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"Please input %d numbers!\n"</span>,n);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	min=max=a[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span> (i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i]&gt;max)&#123;</span><br><span class="line">			max=a[i];</span><br><span class="line">			j=i;&#125;</span><br><span class="line">		<span class="keyword">if</span> (a[i]&lt;min)&#123;</span><br><span class="line">			min=a[i];</span><br><span class="line">			k=i;&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"max#%d=%d,min#%d=%d\n"</span>,j,max,k,min);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h2 id="各位数字之和"><a href="#各位数字之和" class="headerlink" title="各位数字之和"></a>各位数字之和</h2><div class="note info"><p>输入一个整数，求它的各位数字之和及位数。例如234的各位数字之和是9，位数是3</p></div>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"><span class="built_in">int</span> main(void)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">int</span> <span class="built_in">n</span>,<span class="built_in">sum</span>,<span class="built_in">count</span>;</span><br><span class="line">  <span class="built_in">sum</span>=<span class="number">0</span>;</span><br><span class="line">  <span class="built_in">n</span>=<span class="number">0</span>;</span><br><span class="line">  <span class="built_in">count</span>=<span class="number">0</span>;</span><br><span class="line">  printf (<span class="string">"please input a number\n"</span>);</span><br><span class="line">  scanf (<span class="string">"%d"</span>,&amp;<span class="built_in">n</span>);</span><br><span class="line">  while (<span class="built_in">n</span>&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">sum</span>=<span class="built_in">sum</span>+<span class="built_in">n</span>%<span class="number">10</span>;</span><br><span class="line">    <span class="built_in">n</span>=<span class="built_in">n</span>/<span class="number">10</span>;</span><br><span class="line">    <span class="built_in">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  printf (<span class="string">"数字之和是%d, 位数是%d\n"</span>,<span class="built_in">sum</span>,<span class="built_in">count</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是因为C语言里一个数值赋值给整型的时候（取整），是忽视小数部分的。</p>
+<li><h3 id="二维数组的定义"><a href="#二维数组的定义" class="headerlink" title="二维数组的定义"></a>二维数组的定义</h3><div class="note info"><p>二维数组（输入数值，以一定格式输出）</p></div>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">2</span>][<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">int</span> j,k;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"\ninput array a:"</span>);</span><br><span class="line">	<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">2</span>;j++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (k=<span class="number">0</span>;k&lt;<span class="number">3</span>;k++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[j][k]);&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"output array\n"</span>);</span><br><span class="line">	<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">2</span>;j++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (k=<span class="number">0</span>;k&lt;<span class="number">3</span>;k++)&#123;</span><br><span class="line">			<span class="built_in">printf</span> (<span class="string">"%4d"</span>,a[j][k]);&#125;</span><br><span class="line">		<span class="built_in">printf</span> (<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h2 id="闰年的条件判断"><a href="#闰年的条件判断" class="headerlink" title="闰年的条件判断"></a>闰年的条件判断</h2><div class="note info"><p>输出21世纪所有的闰年。判断闰年的条件是：能被4整除但不能被100整除，或者能被400整除</p></div>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">2000</span>;i&lt;=<span class="number">2099</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (i%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;i%<span class="number">100</span>!=<span class="number">0</span>||i%<span class="number">400</span>==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"%d "</span>,i);</span><br><span class="line">	    <span class="keyword">else</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="二维数组的输出展示"><a href="#二维数组的输出展示" class="headerlink" title="二维数组的输出展示"></a>二维数组的输出展示</h3><div class="note info"><p>二维数组（在展出格式内只输出第一行第一列）</p></div>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">int</span> j,k;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"please enter numbers\n"</span>);</span><br><span class="line">	<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (k=<span class="number">0</span>;k&lt;<span class="number">3</span>;k++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span> (<span class="string">"%d"</span>,&amp;a[j][k]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"output line one and column one\n"</span>);</span><br><span class="line">	<span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (k=<span class="number">0</span>;k&lt;<span class="number">3</span>;k++)&#123;</span><br><span class="line">			<span class="keyword">if</span> (k==<span class="number">1</span> || j==<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="built_in">printf</span> (<span class="string">"%4d"</span>,a[j][k]);&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span> (<span class="string">"    "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">			<span class="built_in">printf</span> (<span class="string">"\n"</span>);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -435,6 +432,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/课堂笔记/" rel="tag"># 课堂笔记</a>
           
             <a href="/tags/C语言/" rel="tag"># C语言</a>
           
@@ -469,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/24/11-23Cnotes/" rel="next" title="【课堂笔记】C语言循环结构">
-                <i class="fa fa-chevron-left"></i> 【课堂笔记】C语言循环结构
+              <a href="/2018/11/25/CsummaryTBC/" rel="next" title="C语言个人总结（持续更新">
+                <i class="fa fa-chevron-left"></i> C语言个人总结（持续更新
               </a>
             
           </div>
@@ -478,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/23/arrays/" rel="prev" title="数组和二维数组">
-                数组和二维数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目中while和for的小区别"><span class="nav-number">1.</span> <span class="nav-text">题目中while和for的小区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值的交换"><span class="nav-number">2.</span> <span class="nav-text">数值的交换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各位数字之和"><span class="nav-number">3.</span> <span class="nav-text">各位数字之和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闰年的条件判断"><span class="nav-number">4.</span> <span class="nav-text">闰年的条件判断</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组和二维数组"><span class="nav-number">1.</span> <span class="nav-text">数组和二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的定义"><span class="nav-number">1.1.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找数组的最值"><span class="nav-number">1.2.</span> <span class="nav-text">找数组的最值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组的定义"><span class="nav-number">1.3.</span> <span class="nav-text">二维数组的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组的输出展示"><span class="nav-number">1.4.</span> <span class="nav-text">二维数组的输出展示</span></a></li></ol></li></ol></div>
             
 
           </div>
